@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お口とじとじ — Instagram Reel</title>
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=M+PLUS+Rounded+1c:wght@400;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --pink:#ff7c9e;--pink-lt:#ffeef4;--pink-md:#ffb8d0;
+  --teal:#2cb8a0;--teal-lt:#e0f8f3;
+  --purple:#9b6bdf;--purple-lt:#f3eeff;
+  --gold:#c9a86c;--gold-lt:#f5edd8;
+  --navy:#1a2e40;--cream:#fdf8f5;--white:#fff;
+  --gray:#7a96b0;
+}
+html,body{width:100%;height:100%;overflow:hidden;background:#0a0a0a;display:flex;align-items:center;justify-content:center}
+
+.reel{
+  width:min(390px,100vw);height:min(693px,100vh);
+  position:relative;overflow:hidden;font-family:'M PLUS Rounded 1c',sans-serif;
+}
+
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none}
+.scene.active{opacity:1;pointer-events:auto}
+
+/* ── PROGRESS ── */
+.progress{position:absolute;top:14px;left:12px;right:12px;display:flex;gap:4px;z-index:100}
+.pseg{flex:1;height:2.5px;background:rgba(255,255,255,.25);border-radius:2px;overflow:hidden}
+.pfill{height:100%;background:white;border-radius:2px;width:0}
+
+/* ── SCENE 0: HOOK ── */
+.s0{background:var(--navy);overflow:hidden}
+.s0-mesh{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 0%,rgba(255,124,158,.3),transparent 60%),
+    radial-gradient(ellipse 70% 60% at 10% 80%,rgba(44,184,160,.2),transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 60%,rgba(155,107,223,.2),transparent 60%);
+}
+.s0-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:24px 24px;
+}
+.s0-inner{position:relative;z-index:2;text-align:center;padding:0 32px;width:100%}
+.s0-pill{
+  display:inline-block;background:rgba(255,124,158,.2);
+  border:1px solid rgba(255,124,158,.4);
+  color:var(--pink);font-size:9px;font-weight:800;letter-spacing:.25em;
+  padding:5px 16px;border-radius:20px;margin-bottom:22px;
+  opacity:0;animation:up .5s .2s ease forwards;
+}
+.s0-h1{
+  font-family:'Kaisei Decol',serif;
+  font-size:58px;line-height:1.0;color:white;
+  margin-bottom:14px;
+  opacity:0;animation:up .6s .4s ease forwards;
+}
+.s0-h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--pink)}
+.s0-h1 .outline2{color:transparent;-webkit-text-stroke:1.5px var(--teal)}
+.s0-divider{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:0 auto 18px;
+  opacity:0;animation:up .4s .7s ease forwards;
+}
+.s0-sub{
+  font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.9;
+  opacity:0;animation:up .5s .85s ease forwards;
+  margin-bottom:28px;
+}
+.s0-question{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:19px;color:var(--pink-md);line-height:1.65;
+  opacity:0;animation:up .6s 1s ease forwards;
+}
+.s0-tap{
+  margin-top:32px;font-size:11px;color:rgba(255,255,255,.35);
+  letter-spacing:.15em;
+  opacity:0;animation:up .4s 1.5s ease forwards,blink 2s 2s ease-in-out infinite;
+}
+
+/* ── SCENE 1: WORRY ── */
+.s1{background:var(--cream)}
+.s1-inner{padding:56px 28px 36px;width:100%}
+.s1-eyebrow{
+  font-size:9px;font-weight:800;letter-spacing:.25em;color:var(--pink);
+  text-transform:uppercase;margin-bottom:14px;
+  opacity:0;animation:up .4s .1s ease forwards;
+}
+.s1-h2{
+  font-family:'Kaisei Decol',serif;font-size:28px;line-height:1.3;color:var(--navy);
+  margin-bottom:24px;
+  opacity:0;animation:up .5s .22s ease forwards;
+}
+.s1-h2 em{color:var(--pink);font-style:normal}
+
+.worry-cards{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.wc{
+  display:flex;align-items:flex-start;gap:12px;
+  background:white;border-radius:18px;padding:14px 16px;
+  box-shadow:0 3px 18px rgba(26,46,64,.08);
+  opacity:0;
+}
+.wc:nth-child(1){animation:left .45s .35s ease forwards}
+.wc:nth-child(2){animation:left .45s .5s ease forwards}
+.wc:nth-child(3){animation:left .45s .65s ease forwards}
+.wc-emoji{font-size:28px;flex-shrink:0;margin-top:2px}
+.wc-body h4{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:3px}
+.wc-body p{font-size:11px;color:var(--gray);line-height:1.6}
+.wc-body p strong{color:var(--pink)}
+
+.s1-reassure{
+  background:linear-gradient(135deg,var(--teal),#1a9a88);
+  border-radius:18px;padding:16px 20px;text-align:center;
+  opacity:0;animation:up .5s .85s ease forwards;
+}
+.s1-reassure p{font-family:'Kaisei Decol',serif;font-size:17px;color:white;line-height:1.55}
+
+/* ── SCENE 2: WHAT IS ── */
+.s2{background:linear-gradient(160deg,#fff0f5 0%,var(--cream) 55%,#f0fdf9 100%)}
+.s2-inner{padding:48px 28px;width:100%}
+.s2-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--pink);color:white;
+  font-size:9px;font-weight:800;letter-spacing:.2em;
+  padding:5px 14px;border-radius:20px;margin-bottom:16px;
+  opacity:0;animation:up .4s .1s ease forwards;
+}
+.s2-h2{
+  font-family:'Kaisei Decol',serif;font-size:26px;line-height:1.3;color:var(--navy);
+  margin-bottom:6px;
+  opacity:0;animation:up .5s .22s ease forwards;
+}
+.s2-h2 span{color:var(--pink)}
+.s2-serif{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:13px;color:var(--gray);margin-bottom:22px;
+  opacity:0;animation:up .4s .35s ease forwards;
+}
+
+/* Hero visual - girl + boy chars with speech bubble */
+.char-row{
+  display:flex;justify-content:center;gap:16px;margin-bottom:20px;
+  opacity:0;animation:pop .5s .45s ease forwards;
+}
+.char-box{
+  background:white;border-radius:20px;padding:14px 12px;
+  box-shadow:0 4px 20px rgba(0,0,0,.09);text-align:center;
+  width:130px;
+}
+.char-box .emoji{font-size:44px;display:block;margin-bottom:6px}
+.char-box .label{font-size:10px;font-weight:800;color:var(--navy);margin-bottom:2px}
+.char-box .sublabel{font-size:9px;color:var(--gray)}
+.char-box.girl{border-top:3px solid var(--pink)}
+.char-box.boy{border-top:3px solid var(--teal)}
+
+.vol-strip{
+  display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;
+  opacity:0;animation:up .4s .65s ease forwards;
+}
+.vol-chip{
+  background:white;border-radius:10px;padding:6px 10px;
+  font-size:10px;font-weight:700;color:var(--navy);
+  box-shadow:0 2px 10px rgba(0,0,0,.07);
+  display:flex;align-items:center;gap:5px;
+  border-left:3px solid var(--pink);
+}
+.vol-chip.t{border-left-color:var(--teal)}
+.vol-chip.p{border-left-color:var(--purple)}
+
+.s2-free{
+  background:var(--navy);border-radius:16px;padding:14px 18px;
+  display:flex;align-items:center;gap:12px;
+  opacity:0;animation:up .5s .85s ease forwards;
+}
+.s2-free p{font-size:12px;color:rgba(255,255,255,.85);line-height:1.6}
+.s2-free strong{color:var(--gold);font-size:13px}
+
+/* ── SCENE 3: HOW ── */
+.s3{background:linear-gradient(160deg,var(--purple-lt) 0%,var(--cream) 50%,var(--teal-lt) 100%)}
+.s3-inner{padding:48px 28px;width:100%}
+.s3-tag{
+  display:inline-block;background:var(--purple);color:white;
+  font-size:9px;font-weight:800;letter-spacing:.2em;
+  padding:5px 14px;border-radius:20px;margin-bottom:16px;
+  opacity:0;animation:up .4s .1s ease forwards;
+}
+.s3-h2{
+  font-family:'Kaisei Decol',serif;font-size:26px;line-height:1.3;color:var(--navy);
+  margin-bottom:20px;
+  opacity:0;animation:up .5s .22s ease forwards;
+}
+.s3-h2 span{color:var(--purple)}
+
+.steps{display:flex;flex-direction:column;gap:0;margin-bottom:22px}
+.step-row{display:flex;gap:0;position:relative}
+.step-left{display:flex;flex-direction:column;align-items:center;width:52px;flex-shrink:0}
+.step-circle{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;color:white;z-index:1;
+  flex-shrink:0;
+}
+.step-line{width:2px;flex:1;background:rgba(155,107,223,.2);margin:3px 0}
+.step-row:last-child .step-line{display:none}
+.step-body{flex:1;padding:0 0 16px 12px}
+.step-title{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:2px}
+.step-desc{font-size:11px;color:var(--gray);line-height:1.55}
+.step-row{opacity:0}
+.step-row:nth-child(1){animation:left .4s .35s ease forwards}
+.step-row:nth-child(2){animation:left .4s .5s ease forwards}
+.step-row:nth-child(3){animation:left .4s .65s ease forwards}
+.step-row:nth-child(4){animation:left .4s .8s ease forwards}
+.step-row:nth-child(5){animation:left .4s .95s ease forwards}
+
+.s3-result{
+  background:linear-gradient(135deg,var(--pink),#e85d8a);
+  border-radius:18px;padding:16px 18px;
+  display:flex;align-items:center;gap:12px;
+  opacity:0;animation:up .5s 1.15s ease forwards;
+}
+.s3-result p{font-size:12px;color:rgba(255,255,255,.9);line-height:1.7}
+.s3-result strong{color:white;font-size:13px;display:block;margin-bottom:2px}
+
+/* ── SCENE 4: SCIENCE ── */
+.s4{background:var(--navy);overflow:hidden}
+.s4-mesh{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%,rgba(44,184,160,.18),transparent),
+    radial-gradient(ellipse 50% 60% at 80% 80%,rgba(201,168,108,.15),transparent);
+}
+.s4-inner{position:relative;z-index:2;padding:48px 28px;width:100%}
+.s4-eyebrow{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:13px;color:var(--gold);letter-spacing:.1em;margin-bottom:14px;
+  opacity:0;animation:up .4s .1s ease forwards;
+}
+.s4-h2{
+  font-family:'Kaisei Decol',serif;font-size:30px;line-height:1.25;color:white;
+  margin-bottom:24px;
+  opacity:0;animation:up .5s .22s ease forwards;
+}
+.s4-h2 .gl{color:var(--gold)}
+.s4-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.s4-box{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:16px 12px;text-align:center;
+  opacity:0;
+}
+.s4-box:nth-child(1){animation:pop .4s .38s ease forwards}
+.s4-box:nth-child(2){animation:pop .4s .5s ease forwards}
+.s4-box:nth-child(3){animation:pop .4s .62s ease forwards}
+.s4-box:nth-child(4){animation:pop .4s .74s ease forwards}
+.s4-num{
+  font-family:'Kaisei Decol',serif;font-size:34px;color:var(--gold);
+  line-height:1;margin-bottom:5px;font-weight:700;
+}
+.s4-label{font-size:10px;color:rgba(255,255,255,.55);line-height:1.55}
+
+.s4-quote{
+  background:rgba(255,255,255,.05);border-radius:16px;
+  border-left:3px solid var(--pink);padding:16px;
+  opacity:0;animation:up .5s .9s ease forwards;
+}
+.s4-quote p{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:14.5px;color:rgba(255,255,255,.8);line-height:1.8;
+}
+.s4-author{margin-top:8px;font-size:10px;color:var(--gold);font-weight:700;letter-spacing:.08em}
+
+/* ── SCENE 5: VOICE ── */
+.s5{background:linear-gradient(160deg,#fff8f4 0%,var(--cream) 50%,#f4fff8 100%)}
+.s5-inner{padding:48px 26px;width:100%}
+.s5-tag{
+  display:inline-block;background:var(--teal);color:white;
+  font-size:9px;font-weight:800;letter-spacing:.2em;
+  padding:5px 14px;border-radius:20px;margin-bottom:16px;
+  opacity:0;animation:up .4s .1s ease forwards;
+}
+.s5-h2{
+  font-family:'Kaisei Decol',serif;font-size:24px;line-height:1.35;color:var(--navy);
+  margin-bottom:18px;
+  opacity:0;animation:up .5s .22s ease forwards;
+}
+.s5-h2 span{color:var(--teal)}
+
+.testimonials{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.testi{
+  background:white;border-radius:18px;padding:14px 16px;
+  box-shadow:0 3px 16px rgba(0,0,0,.07);
+  opacity:0;
+}
+.testi:nth-child(1){animation:left .45s .35s ease forwards}
+.testi:nth-child(2){animation:left .45s .52s ease forwards}
+.testi:nth-child(3){animation:left .45s .69s ease forwards}
+.testi-head{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.testi-avatar{font-size:22px}
+.testi-name{font-size:11px;font-weight:800;color:var(--navy)}
+.testi-name span{display:block;font-size:10px;color:var(--gray);font-weight:500}
+.testi-stars{margin-left:auto;font-size:11px;color:var(--gold)}
+.testi p{font-size:11.5px;color:var(--navy);line-height:1.7;font-style:italic}
+.testi p::before{content:'"'}
+.testi p::after{content:'"'}
+
+.s5-note{
+  background:var(--pink-lt);border-radius:14px;padding:12px 16px;
+  font-size:11px;color:var(--navy);line-height:1.65;text-align:center;
+  opacity:0;animation:up .4s .9s ease forwards;
+  border:1px solid var(--pink-md);
+}
+.s5-note strong{color:var(--pink)}
+
+/* ── SCENE 6: CTA ── */
+.s6{overflow:hidden}
+.s6-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,#1a2e40 0%,#2a1a3a 50%,#0a2a22 100%);
+}
+.s6-mesh{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 20%,rgba(255,124,158,.2),transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 80%,rgba(44,184,160,.15),transparent 60%);
+}
+.s6-inner{position:relative;z-index:2;text-align:center;padding:44px 28px;width:100%}
+
+.s6-clinic{
+  opacity:0;animation:up .5s .1s ease forwards;margin-bottom:20px;
+}
+.s6-clinic-sub{font-size:9px;letter-spacing:.3em;color:var(--gold);margin-bottom:5px;font-family:'Cormorant Garamond',serif;font-style:italic}
+.s6-clinic-name{font-family:'Kaisei Decol',serif;font-size:20px;color:white;margin-bottom:3px}
+.s6-clinic-loc{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.15em}
+
+.s6-line{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 20px;opacity:0;animation:up .3s .4s ease forwards}
+
+.s6-headline{
+  font-family:'Kaisei Decol',serif;font-size:36px;line-height:1.15;color:white;
+  margin-bottom:12px;
+  opacity:0;animation:up .6s .5s ease forwards;
+}
+.s6-headline .big{display:block;font-size:48px;color:transparent;-webkit-text-stroke:1.5px var(--pink)}
+.s6-body{
+  font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.9;
+  margin-bottom:24px;
+  opacity:0;animation:up .5s .75s ease forwards;
+}
+
+.s6-chips{
+  display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;
+  opacity:0;animation:up .4s .9s ease forwards;
+}
+.s6-chip{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  border-radius:20px;padding:7px 14px;font-size:11px;font-weight:700;color:rgba(255,255,255,.8);
+}
+
+.s6-cta-box{
+  background:linear-gradient(135deg,var(--pink),#e85d8a);
+  border-radius:22px;padding:20px 24px;margin-bottom:16px;
+  opacity:0;animation:pop .5s 1.05s ease forwards;
+  box-shadow:0 8px 32px rgba(255,124,158,.35);
+}
+.s6-cta-box h3{font-family:'Kaisei Decol',serif;font-size:18px;color:white;margin-bottom:4px}
+.s6-cta-box p{font-size:12px;color:rgba(255,255,255,.85);line-height:1.6}
+
+.s6-social{
+  display:flex;gap:16px;justify-content:center;font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.08em;
+  opacity:0;animation:up .3s 1.3s ease forwards;
+}
+
+/* ── TAP AREAS ── */
+.tap-l{position:absolute;left:0;top:0;width:35%;height:100%;z-index:50;cursor:pointer}
+.tap-r{position:absolute;right:0;top:0;width:65%;height:100%;z-index:50;cursor:pointer}
+
+/* ── KEYFRAMES ── */
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes left{from{opacity:0;transform:translateX(-22px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+
+
+html, body { overflow: auto !important; height: auto !important; }
+.scene {
+  position: relative !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+  display: flex !important;
+  min-height: 693px !important;
+  border-bottom: 3px solid rgba(0,0,0,.08) !important;
+}
+.scene * { opacity: 1 !important; animation: none !important; transform: none !important; }
+.progress, .tap-l, .tap-r, .scene-label, .tap-hint { display: none !important; }
+.reel { width: min(390px,100vw) !important; height: auto !important; position: relative !important; margin: 0 auto !important; }
+.s0-mesh,.s4-mesh,.s6-bg,.s6-mesh,.s0-bg,.s4-bg,.s0-dots,.s0-grain,.blob1,.blob2,.blob3 { position: absolute !important; }
+
+
+
+.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+.reveal.visible { opacity: 1 !important; }
+
+</style>
+</head>
+<body>
+<div class="reel" id="reel">
+  <div class="progress" id="prog"></div>
+
+  <!-- ══ SCENE 0: HOOK ══ -->
+  <div class="scene s0 active" id="scene0">
+    <div class="s0-mesh"></div>
+    <div class="s0-dots"></div>
+    <div class="s0-inner">
+      <div class="s0-pill">FOR PARENTS — 保護者のかたへ</div>
+      <h1 class="s0-h1">
+        <span class="outline">お口</span><br>
+        <span class="outline2">ポカン</span><br>
+        してない？
+      </h1>
+      <div class="s0-divider"></div>
+      <p class="s0-sub">お子さんの口が開いたまま…<br>それ、放置すると歯並びに<br>影響するかもしれません。</p>
+      <p class="s0-question">でも、毎日<strong style="color:#fff">7分</strong>で<br>変えられます。</p>
+      <div class="s0-tap">タップして続きを見る ↓</div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 1: WORRY ══ -->
+  <div class="scene s1" id="scene1">
+    <div class="s1-inner">
+      <div class="s1-eyebrow">こんなサインありませんか</div>
+      <h2 class="s1-h2">気づいたら<em>手遅れ</em>に<br>なる前に</h2>
+      <div class="worry-cards">
+        <div class="wc">
+          <div class="wc-emoji">😮</div>
+          <div class="wc-body">
+            <h4>いつも口が開いている</h4>
+            <p>舌が低い位置に落ち、上顎に圧がかからず<strong>歯列が狭くなります</strong></p>
+          </div>
+        </div>
+        <div class="wc">
+          <div class="wc-emoji">😴</div>
+          <div class="wc-body">
+            <h4>口呼吸・いびきをかく</h4>
+            <p>顔貌の変化・集中力の低下にも影響。<strong>鼻呼吸への切り替えが急務</strong></p>
+          </div>
+        </div>
+        <div class="wc">
+          <div class="wc-emoji">🦷</div>
+          <div class="wc-body">
+            <h4>歯並びが気になりだした</h4>
+            <p><strong>7〜10歳が最も効果的な時期</strong>。今が一番大事なタイミングです</p>
+          </div>
+        </div>
+      </div>
+      <div class="s1-reassure">
+        <p>でも大丈夫。<br><strong style="color:#aef4e8">毎日7分のトレーニング</strong>で<br>改善できます ✨</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 2: WHAT IS ══ -->
+  <div class="scene s2" id="scene2">
+    <div class="s2-inner">
+      <div class="s2-tag">🌸 ご紹介</div>
+      <h2 class="s2-h2"><span>お口とじとじ</span>シリーズ<br>全7巻 — 無料配布中</h2>
+      <p class="s2-serif">Oral Myofunctional Therapy for Kids</p>
+
+      <div class="char-row">
+        <div class="char-box girl">
+          <span class="emoji">👧</span>
+          <div class="label">女の子版</div>
+          <div class="sublabel">Vol.1〜7</div>
+        </div>
+        <div class="char-box boy">
+          <span class="emoji">👦</span>
+          <div class="label">男の子版</div>
+          <div class="sublabel">Vol.1〜7</div>
+        </div>
+      </div>
+
+      <div class="vol-strip">
+        <div class="vol-chip">👄 くちびる閉じる</div>
+        <div class="vol-chip t">👃 鼻呼吸スイッチ</div>
+        <div class="vol-chip p">👅 舌で上顎を広げる</div>
+        <div class="vol-chip">💋 口輪筋ドリル</div>
+        <div class="vol-chip t">🥤 ストロー訓練</div>
+        <div class="vol-chip p">🎈 バルーン吹き</div>
+      </div>
+
+      <div class="s2-free">
+        <span style="font-size:28px;flex-shrink:0">📱</span>
+        <p><strong>アプリ不要・完全無料</strong><br>スマホのブラウザでそのまま使えます。タイマー・ゲーム・カレンダー付き</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 3: HOW ══ -->
+  <div class="scene s3" id="scene3">
+    <div class="s3-inner">
+      <div class="s3-tag">📋 プログラム内容</div>
+      <h2 class="s3-h2">12週間・<span>全7ステップ</span></h2>
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-left"><div class="step-circle" style="background:var(--pink)">1</div><div class="step-line"></div></div>
+          <div class="step-body"><div class="step-title">リップシール・ホールド</div><div class="step-desc">くちびるをそっと閉じる10秒×10回</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-left"><div class="step-circle" style="background:#4fc3f7">2</div><div class="step-line"></div></div>
+          <div class="step-body"><div class="step-title">鼻呼吸スイッチ訓練</div><div class="step-desc">4秒吸って8秒吐く呼吸再教育</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-left"><div class="step-circle" style="background:var(--teal)">3</div><div class="step-line"></div></div>
+          <div class="step-body"><div class="step-title">舌スポット＋口蓋吸引</div><div class="step-desc">舌で上顎を押し広げるポッピング</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-left"><div class="step-circle" style="background:var(--pink)">4</div><div class="step-line"></div></div>
+          <div class="step-body"><div class="step-title">マ・バ・パ行ドリル</div><div class="step-desc">口輪筋を音読トレーニングで強化</div></div>
+        </div>
+        <div class="step-row">
+          <div class="step-left"><div class="step-circle" style="background:var(--purple)">5〜7</div><div class="step-line"></div></div>
+          <div class="step-body"><div class="step-title">ストロー・バルーン・フル通し</div><div class="step-desc">口腔内圧強化 → 84日間で習慣定着</div></div>
+        </div>
+      </div>
+      <div class="s3-result">
+        <span style="font-size:26px;flex-shrink:0">🏆</span>
+        <p><strong>84日（12週間）完走すると…</strong>口唇閉鎖・鼻呼吸・舌位置がすべて改善。歯列の環境が整います</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 4: SCIENCE ══ -->
+  <div class="scene s4" id="scene4">
+    <div class="s4-mesh"></div>
+    <div class="s4-inner">
+      <div class="s4-eyebrow">科学的根拠に基づいたプログラム</div>
+      <h2 class="s4-h2">なぜ<br><span class="gl">今すぐ</span>やるべきか</h2>
+      <div class="s4-grid">
+        <div class="s4-box"><div class="s4-num">7〜10</div><div class="s4-label">歳が口腔機能<br>改善の黄金期</div></div>
+        <div class="s4-box"><div class="s4-num">7分</div><div class="s4-label">毎日の<br>トレーニング時間</div></div>
+        <div class="s4-box"><div class="s4-num">SLP</div><div class="s4-label">言語療法の<br>科学的手法を応用</div></div>
+        <div class="s4-box"><div class="s4-num">84日</div><div class="s4-label">神経筋パターンが<br>定着する期間</div></div>
+      </div>
+      <div class="s4-quote">
+        <p>成長期の口腔機能トレーニングは、骨格が最も変化しやすい時期だからこそ意味があります。毎日の積み重ねが、お子さんの歯並びの未来をつくります。</p>
+        <div class="s4-author">— リンカクデンタルクリニック 院長</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 5: VOICE ══ -->
+  <div class="scene s5" id="scene5">
+    <div class="s5-inner">
+      <div class="s5-tag">💬 ご利用のお母さんの声</div>
+      <h2 class="s5-h2"><span>続けやすい</span>と<br>大好評です</h2>
+      <div class="testimonials">
+        <div class="testi">
+          <div class="testi-head">
+            <div class="testi-avatar">👩</div>
+            <div class="testi-name">Aさん（7歳 女の子のお母さん）<span>受け口 → 改善中</span></div>
+            <div class="testi-stars">★★★★★</div>
+          </div>
+          <p>ゲーム感覚でできるので娘が毎日自分からやってます！歯みがきのあとの習慣になりました。</p>
+        </div>
+        <div class="testi">
+          <div class="testi-head">
+            <div class="testi-avatar">👩‍🦱</div>
+            <div class="testi-name">Bさん（8歳 男の子のお母さん）<span>お口ポカン → 改善中</span></div>
+            <div class="testi-stars">★★★★★</div>
+          </div>
+          <p>男の子キャラのガイドが嬉しかったみたい。先生の説明も分かりやすく安心して続けられます。</p>
+        </div>
+        <div class="testi">
+          <div class="testi-head">
+            <div class="testi-avatar">👱‍♀️</div>
+            <div class="testi-name">Cさん（7歳 女の子のお母さん）<span>口呼吸 → 改善中</span></div>
+            <div class="testi-stars">★★★★★</div>
+          </div>
+          <p>アプリなしでスマホだけで使えて、タイマーまで付いてるのがすごい。子どもが喜んでます！</p>
+        </div>
+      </div>
+      <div class="s5-note"><strong>※ 架空のお声をモデルとして作成しています</strong><br>実際の効果には個人差があります</div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 6: CTA ══ -->
+  <div class="scene s6" id="scene6">
+    <div class="s6-bg"></div>
+    <div class="s6-mesh"></div>
+    <div class="s6-inner">
+      <div class="s6-clinic">
+        <div class="s6-clinic-sub">RINKAKU DENTAL CLINIC</div>
+        <div class="s6-clinic-name">リンカクデンタルクリニック</div>
+        <div class="s6-clinic-loc">東京都港区南青山</div>
+      </div>
+      <div class="s6-line"></div>
+      <h2 class="s6-headline">
+        今すぐ
+        <span class="big">無料で</span>
+        始めよう
+      </h2>
+      <p class="s6-body">
+        ご来院時にQRコードをお渡しします。<br>
+        スマホで読み取るだけで<br>
+        全14巻のガイドが使えます。
+      </p>
+      <div class="s6-chips">
+        <div class="s6-chip">📱 アプリ不要</div>
+        <div class="s6-chip">🆓 完全無料</div>
+        <div class="s6-chip">🏠 おうちで</div>
+        <div class="s6-chip">👨‍👩‍👧 親子で</div>
+      </div>
+      <div class="s6-cta-box">
+        <h3>🦷 初診・ご相談はこちら</h3>
+        <p>プロフィールのリンクから<br>オンライン予約できます ↑</p>
+      </div>
+      <div class="s6-social">
+        <span>📸 @rinkaku_dental</span>
+        <span>📍 南青山 3分</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tap-l" onclick="prev()"></div>
+  <div class="tap-r" onclick="next()"></div>
+</div>
+
+
+</body>
+</html>
