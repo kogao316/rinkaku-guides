@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お口とじとじ Vol.1 — リップシール・ホールド</title>
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --main:#ff7c9e;--main-lt:#ffeef4;--main-md:#ffb8d0;
+  --sub:#9b6bdf;--sub-lt:#f3eeff;
+  --teal:#2cb8a0;--teal-lt:#e0f8f3;
+  --gold:#f5a623;--gold-lt:#fef8e6;
+  --navy:#1a3a5c;--gray:#7a96b0;
+  --cream:#faf7f3;--white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'M PLUS Rounded 1c',sans-serif;background:var(--cream);color:var(--navy);overflow-x:hidden}
+
+.hero{min-height:100vh;background:linear-gradient(150deg,#fff0f5 0%,#f8f0ff 50%,#e8fff9 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px 56px;position:relative;overflow:hidden}
+.blob1{position:absolute;top:-80px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,124,158,.18),transparent 70%);border-radius:50%;animation:drift 9s ease-in-out infinite}
+.blob2{position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(155,107,223,.14),transparent 70%);border-radius:50%;animation:drift 12s ease-in-out infinite reverse}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(10px,-14px)}}
+
+.series-badge{display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap;justify-content:center}
+.series-label{background:var(--navy);color:white;font-size:10px;font-weight:800;letter-spacing:.15em;padding:4px 14px;border-radius:20px}
+.vol-num{background:var(--main);color:white;font-size:11px;font-weight:900;padding:4px 14px;border-radius:20px}
+.series-name{background:var(--sub-lt);color:var(--sub);font-size:10px;font-weight:800;padding:4px 12px;border-radius:20px}
+
+.hero-title{font-family:'Kaisei Decol',serif;font-size:clamp(28px,7vw,54px);font-weight:700;line-height:1.15;text-align:center;margin-bottom:6px}
+.hero-title .accent{color:var(--main)}
+.hero-sub{font-size:13px;color:var(--gray);letter-spacing:.06em;margin-bottom:28px;text-align:center}
+.main-illust{width:min(330px,88vw);margin-bottom:28px;filter:drop-shadow(0 8px 28px rgba(255,124,158,.22));animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+.chip{background:white;border:1.5px solid rgba(255,124,158,.3);color:var(--main);font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.scroll-hint{display:flex;flex-direction:column;align-items:center;gap:4px;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.scroll-hint span{font-size:10px;color:var(--gray);letter-spacing:.1em}
+.scroll-arrow{font-size:22px;color:var(--main)}
+
+.section{max-width:680px;margin:0 auto;padding:0 20px}
+.sec-pad{padding-top:52px}
+.eyebrow{font-size:10px;font-weight:800;letter-spacing:.18em;color:var(--main);text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-family:'Kaisei Decol',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:20px}
+
+.why-card{background:white;border-radius:24px;padding:28px 24px;border-left:5px solid var(--main);box-shadow:0 4px 24px rgba(0,0,0,.07);display:flex;gap:20px;align-items:flex-start}
+.why-icon{font-size:48px;line-height:1;flex-shrink:0}
+.why-card h2{font-size:16px;font-weight:800;color:var(--main);margin-bottom:8px}
+.why-card p{font-size:13px;line-height:1.85;color:#5a7a98}
+.why-card strong{color:var(--navy)}
+
+/* before/after */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:500px){.ba-grid{grid-template-columns:1fr}}
+.ba-card{background:white;border-radius:18px;padding:18px;box-shadow:0 3px 14px rgba(0,0,0,.06)}
+.ba-card.bad{border-top:4px solid #ff6b6b}
+.ba-card.good{border-top:4px solid var(--teal)}
+.ba-card h3{font-size:12px;font-weight:800;margin-bottom:10px}
+.ba-card.bad h3{color:#e05050}
+.ba-card.good h3{color:var(--teal)}
+.ba-card p{font-size:11.5px;line-height:1.7;color:var(--gray)}
+.illust-wrap{border-radius:12px;overflow:hidden;margin-bottom:10px}
+
+/* steps */
+.steps-list{display:flex;flex-direction:column;gap:0}
+.step-item{display:flex;gap:0}
+.step-left{display:flex;flex-direction:column;align-items:center;width:56px;flex-shrink:0}
+.step-circle{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:white;z-index:1;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.step-line{flex:1;width:2px;background:linear-gradient(180deg,rgba(255,124,158,.3),rgba(255,124,158,.04));margin:4px 0}
+.step-item:last-child .step-line{display:none}
+.step-body{flex:1;padding:0 0 30px 16px}
+.step-tag{font-size:9px;font-weight:800;letter-spacing:.14em;color:var(--main);text-transform:uppercase;margin-bottom:4px}
+.step-body h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.step-body p{font-size:12.5px;line-height:1.8;color:#5a7a98;margin-bottom:12px}
+.step-illust{border-radius:16px;overflow:hidden;margin-bottom:12px}
+.note{background:var(--gold-lt);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:10px 14px;font-size:12px;color:#8a6820;font-weight:500}
+.note::before{content:'💡 '}
+
+/* Timer */
+.timer-card{background:linear-gradient(135deg,var(--navy),#2a5a8a);border-radius:24px;padding:28px 24px;color:white;text-align:center;box-shadow:0 8px 32px rgba(26,58,92,.28)}
+.timer-card h3{font-size:16px;font-weight:800;margin-bottom:4px}
+.timer-card .sub{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:20px}
+.timer-display{font-family:'Kaisei Decol',serif;font-size:72px;font-weight:700;line-height:1;margin-bottom:8px;color:var(--main-md);text-shadow:0 0 30px rgba(255,124,158,.4)}
+.timer-label{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:16px;letter-spacing:.06em}
+.timer-progress{width:100%;height:7px;background:rgba(255,255,255,.15);border-radius:4px;margin-bottom:20px;overflow:hidden}
+.timer-bar{height:100%;background:linear-gradient(90deg,var(--main),var(--sub));border-radius:4px;transition:width .1s linear}
+.set-dots{display:flex;gap:8px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+.set-dot{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:rgba(255,255,255,.5);transition:all .3s}
+.set-dot.done{background:rgba(255,124,158,.4);border-color:var(--main);color:var(--main-md)}
+.timer-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.tbtn{padding:12px 24px;border-radius:14px;border:none;font-family:'M PLUS Rounded 1c',sans-serif;font-size:13px;font-weight:800;cursor:pointer;transition:transform .15s}
+.tbtn:active{transform:scale(.93)}
+.tbtn-start{background:var(--main);color:white;box-shadow:0 4px 16px rgba(255,124,158,.4)}
+.tbtn-reset{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8)}
+
+/* tips */
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:480px){.tips-grid{grid-template-columns:1fr}}
+.tip-card{background:white;border-radius:16px;padding:18px 14px;text-align:center;box-shadow:0 3px 14px rgba(0,0,0,.06)}
+.tip-card .tip-icon{font-size:30px;margin-bottom:8px}
+.tip-card h4{font-size:12px;font-weight:800;color:var(--navy);margin-bottom:5px}
+.tip-card p{font-size:11px;line-height:1.65;color:var(--gray)}
+
+/* voice */
+.voice-bubble{background:white;border-radius:20px 20px 20px 4px;padding:20px 22px;box-shadow:0 4px 20px rgba(0,0,0,.08);border:2px solid var(--main-lt);margin-bottom:16px}
+.voice-bubble p{font-size:13px;line-height:1.8;color:#4a6880}
+.voice-bubble strong{color:var(--main)}
+.voice-char{display:flex;align-items:flex-end;gap:14px;padding-top:6px}
+.char-illust{width:80px;flex-shrink:0}
+
+/* cal */
+.cal-card{background:white;border-radius:24px;padding:24px 20px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cal-header h3{font-size:15px;font-weight:800;color:var(--navy)}
+.cal-header span{font-size:11px;color:var(--gray)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:16px}
+.cal-day{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;border:1.5px solid #eef2f6;transition:all .2s;user-select:none}
+.cal-day:hover{border-color:var(--main);transform:scale(1.08)}
+.cal-day.done{background:var(--main-lt);border-color:var(--main)}
+.cal-legend{display:flex;gap:16px;font-size:11px;color:var(--gray)}
+.cal-legend span{display:flex;align-items:center;gap:5px}
+.dot{width:10px;height:10px;border-radius:3px}
+.dot.done{background:var(--main)}
+.dot.empty{background:#eef2f6;border:1px solid #dde5ee}
+
+/* nav */
+.nav-footer{padding:48px 20px 56px;max-width:680px;margin:0 auto}
+.nav-card{background:linear-gradient(135deg,#fff0f5,#f3eeff);border-radius:20px;padding:24px 20px;border:1.5px dashed rgba(255,124,158,.35);text-align:center}
+.nav-card h3{font-family:'Kaisei Decol',serif;font-size:16px;color:var(--navy);margin-bottom:6px}
+.nav-card p{font-size:12px;color:var(--gray);margin-bottom:18px;line-height:1.7}
+.nav-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.nav-btn{padding:10px 22px;border-radius:12px;font-family:'M PLUS Rounded 1c',sans-serif;font-size:12px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:transform .15s}
+.nav-btn:hover{transform:translateY(-2px)}
+.nav-btn.prev{background:white;color:var(--gray);border:1.5px solid #dde8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.nav-btn.next{background:var(--main);color:white;box-shadow:0 4px 16px rgba(255,124,158,.35)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+
+html, body { overflow: auto !important; height: auto !important; }
+.scene {
+  position: relative !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+  display: flex !important;
+  min-height: 693px !important;
+  border-bottom: 3px solid rgba(0,0,0,.08) !important;
+}
+.scene * { opacity: 1 !important; animation: none !important; transform: none !important; }
+.progress, .tap-l, .tap-r, .scene-label, .tap-hint { display: none !important; }
+.reel { width: min(390px,100vw) !important; height: auto !important; position: relative !important; margin: 0 auto !important; }
+.s0-mesh,.s4-mesh,.s6-bg,.s6-mesh,.s0-bg,.s4-bg,.s0-dots,.s0-grain,.blob1,.blob2,.blob3 { position: absolute !important; }
+
+
+
+.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+.reveal.visible { opacity: 1 !important; }
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="blob1"></div><div class="blob2"></div>
+  <div class="series-badge">
+    <span class="series-label">お口とじとじシリーズ</span>
+    <span class="vol-num">Vol. 1</span>
+    <span class="series-name">口腔機能発達支援</span>
+  </div>
+
+  <!-- CUTE GIRL SVG: mouth closed, proud expression -->
+  <svg class="main-illust" viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="150" r="138" fill="#ffeef4" opacity=".5"/>
+    <!-- Body -->
+    <rect x="124" y="226" width="92" height="58" rx="22" fill="#ffb8d0"/>
+    <path d="M140 226 Q170 240 200 226" stroke="#ff94bc" stroke-width="2.5" fill="none"/>
+    <!-- Dress bow -->
+    <ellipse cx="170" cy="242" rx="18" ry="11" fill="#ff7c9e"/>
+    <circle cx="170" cy="242" r="5" fill="#cc4070"/>
+    <!-- Arms -->
+    <path d="M124 236 Q100 214 92 192" stroke="#ffb8d0" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M216 236 Q240 214 248 192" stroke="#ffb8d0" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <circle cx="90" cy="188" r="11" fill="#ffe8d8"/>
+    <circle cx="250" cy="188" r="11" fill="#ffe8d8"/>
+    <!-- Thumbs up right hand -->
+    <text x="242" y="196" font-size="16">👍</text>
+    <!-- Head -->
+    <ellipse cx="170" cy="148" rx="86" ry="90" fill="#ffe8d8"/>
+    <!-- Hair base -->
+    <ellipse cx="170" cy="80" rx="86" ry="46" fill="#3d2314"/>
+    <!-- Side hair -->
+    <path d="M88 112 Q60 134 54 182 Q66 188 76 164 Q78 144 90 136Z" fill="#3d2314"/>
+    <path d="M252 112 Q280 134 286 182 Q274 188 264 164 Q262 144 250 136Z" fill="#3d2314"/>
+    <!-- Long twin tails with heart ribbons -->
+    <path d="M84 152 Q46 162 38 204 Q54 214 64 186 Q70 168 88 162Z" fill="#3d2314"/>
+    <path d="M256 152 Q294 162 302 204 Q286 214 276 186 Q270 168 252 162Z" fill="#3d2314"/>
+    <!-- Heart ribbons pink -->
+    <text x="26" y="175" font-size="22">🎀</text>
+    <text x="282" y="175" font-size="22">🎀</text>
+    <!-- Bangs -->
+    <path d="M96 108 Q116 86 143 98 Q153 82 170 80 Q187 82 197 98 Q224 86 244 108 Q224 104 204 112 Q189 102 170 100 Q151 102 136 112 Q116 104 96 108Z" fill="#3d2314"/>
+    <!-- Eyes - happy confident closed smile ^^ -->
+    <!-- Left eye closed happy arc -->
+    <path d="M126 144 Q142 132 158 144" stroke="#3d2314" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- Right eye closed happy arc -->
+    <path d="M182 144 Q198 132 214 144" stroke="#3d2314" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- Eyelashes on closed eyes -->
+    <path d="M126 144 Q120 138 118 132" stroke="#3d2314" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M158 144 Q164 138 166 132" stroke="#3d2314" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M182 144 Q176 138 174 132" stroke="#3d2314" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M214 144 Q220 138 222 132" stroke="#3d2314" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Eyebrows proud arched -->
+    <path d="M122 128 Q140 120 158 126" stroke="#3d2314" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M182 126 Q200 120 218 128" stroke="#3d2314" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <!-- Nose -->
+    <ellipse cx="170" cy="168" rx="6" ry="4" fill="#ffb899" opacity=".6"/>
+    <!-- Mouth CLOSED - proud smile, LIPS SEALED -->
+    <path d="M148 184 Q170 196 192 184" stroke="#cc5070" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- CLOSED LIP label -->
+    <rect x="104" y="196" width="132" height="22" rx="11" fill="#ff7c9e"/>
+    <text x="170" y="212" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="white">くちびる ぴったり！</text>
+    <!-- Check mark badge -->
+    <circle cx="248" cy="110" r="22" fill="#2cb8a0"/>
+    <text x="248" y="118" text-anchor="middle" font-size="22" fill="white">✓</text>
+    <!-- Cheeks big blush -->
+    <ellipse cx="108" cy="168" rx="22" ry="13" fill="#ffb8c8" opacity=".5"/>
+    <ellipse cx="232" cy="168" rx="22" ry="13" fill="#ffb8c8" opacity=".5"/>
+    <!-- Stars -->
+    <text x="18" y="54" font-size="16">✨</text>
+    <text x="294" y="50" font-size="14">💫</text>
+    <text x="20" y="248" font-size="13">🌸</text>
+    <text x="290" y="248" font-size="13">🌸</text>
+  </svg>
+
+  <h1 class="hero-title"><span class="accent">リップシール</span><br>ホールド</h1>
+  <p class="hero-sub">Lip Seal Hold — くちびるをぴったり閉じよう！</p>
+  <div class="hero-chips">
+    <span class="chip">⏱ 所要時間 1分</span>
+    <span class="chip">🔁 10秒×10回</span>
+    <span class="chip">👄 力を入れすぎない</span>
+  </div>
+  <div class="scroll-hint"><span>スクロールして読む</span><div class="scroll-arrow">↓</div></div>
+</section>
+
+<!-- WHY -->
+<div class="section sec-pad reveal">
+  <div class="why-card">
+    <div class="why-icon">😮</div>
+    <div>
+      <h2>なぜ「お口ポカン」が問題なの？</h2>
+      <p>
+        安静時に口が開いている状態（口腔機能発達不全）は、<strong>低位舌・口呼吸・狭窄歯列</strong>の大きな原因になります。<br><br>
+        口が開いていると舌が下がり、上顎への舌圧がなくなるため、上顎の横方向への成長が妨げられます。その結果、歯が並ぶスペースが不足して<strong>歯列が狭くなります（狭窄歯列）</strong>。<br><br>
+        このトレーニングは言語療法（SLP）の<strong>口唇閉鎖訓練</strong>を応用し、安静時の口唇閉鎖を習慣化することが目標です。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- BEFORE/AFTER -->
+<div class="section sec-pad reveal">
+  <div class="eyebrow">Before / After</div>
+  <div class="sec-title">お口の状態 — 今と目標</div>
+  <div class="ba-grid">
+    <div class="ba-card bad">
+      <h3>❌ お口ポカンの状態</h3>
+      <svg class="illust-wrap" viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="180" height="110" fill="#fff8f8" rx="10"/>
+        <ellipse cx="90" cy="55" rx="70" ry="45" fill="#ffe8d8"/>
+        <ellipse cx="62" cy="42" rx="11" ry="12" fill="white"/>
+        <ellipse cx="118" cy="42" rx="11" ry="12" fill="white"/>
+        <circle cx="63" cy="43" r="7" fill="#3a2a18"/>
+        <circle cx="119" cy="43" r="7" fill="#3a2a18"/>
+        <!-- Mouth OPEN - gap between lips -->
+        <path d="M60 72 Q90 68 120 72" stroke="#cc8866" stroke-width="2" fill="none"/>
+        <ellipse cx="90" cy="80" rx="24" ry="14" fill="#cc7755" opacity=".7"/>
+        <!-- Tongue low inside -->
+        <ellipse cx="90" cy="88" rx="18" ry="8" fill="#ffaaaa"/>
+        <!-- Open gap label -->
+        <path d="M60 72 L120 72" stroke="#ff6060" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <text x="90" y="105" text-anchor="middle" font-size="9" fill="#e05050" font-family="sans-serif" font-weight="bold">口が開いてる！</text>
+        <!-- Airflow mouth -->
+        <path d="M70 58 Q60 48 50 44" stroke="#aaddff" stroke-width="2" fill="none" opacity=".7" stroke-dasharray="3,2"/>
+        <path d="M90 55 L90 40" stroke="#aaddff" stroke-width="2" fill="none" opacity=".7" stroke-dasharray="3,2"/>
+        <text x="52" y="36" font-size="9" fill="#5599cc" font-family="sans-serif">口呼吸</text>
+      </svg>
+      <p>口が開いたままで、舌が低い位置にある。口で呼吸するクセがついている。</p>
+    </div>
+    <div class="ba-card good">
+      <h3>✅ 目標の状態</h3>
+      <svg class="illust-wrap" viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+        <rect width="180" height="110" fill="#f8fff8" rx="10"/>
+        <ellipse cx="90" cy="55" rx="70" ry="45" fill="#ffe8d8"/>
+        <ellipse cx="62" cy="42" rx="11" ry="12" fill="white"/>
+        <ellipse cx="118" cy="42" rx="11" ry="12" fill="white"/>
+        <circle cx="63" cy="43" r="7" fill="#3a2a18"/>
+        <circle cx="119" cy="43" r="7" fill="#3a2a18"/>
+        <!-- Mouth CLOSED - lips together -->
+        <path d="M58 72 Q90 78 122 72" stroke="#cc5070" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M64 70 Q90 74 116 70 Q105 76 90 78 Q75 76 64 70Z" fill="#d04070" opacity=".5"/>
+        <!-- Tongue UP at spot -->
+        <ellipse cx="74" cy="68" rx="10" ry="6" fill="#2cb8a0" opacity=".6"/>
+        <!-- Nose breathing arrows -->
+        <path d="M82 30 L82 18" stroke="#2cb8a0" stroke-width="2" marker-end="url(#nUp)"/>
+        <path d="M98 30 L98 18" stroke="#2cb8a0" stroke-width="2" marker-end="url(#nUp)"/>
+        <defs><marker id="nUp" markerWidth="6" markerHeight="5" refX="3" refY="5" orient="auto"><polygon points="0 5,3 0,6 5" fill="#2cb8a0"/></marker></defs>
+        <text x="90" y="14" text-anchor="middle" font-size="9" fill="#2cb8a0" font-family="sans-serif" font-weight="bold">鼻呼吸</text>
+        <text x="90" y="105" text-anchor="middle" font-size="9" fill="#2cb8a0" font-family="sans-serif" font-weight="bold">くちびる ぴったり！</text>
+        <circle cx="148" cy="25" r="14" fill="#2cb8a0"/>
+        <text x="148" y="31" text-anchor="middle" font-size="14" fill="white">✓</text>
+      </svg>
+      <p>くちびるが自然に閉じている。舌が上の位置にあり、鼻で呼吸している。</p>
+    </div>
+  </div>
+</div>
+
+<!-- STEPS -->
+<div class="section sec-pad reveal">
+  <div class="eyebrow">How To</div>
+  <div class="sec-title">やり方 — ステップ・バイ・ステップ</div>
+  <div class="steps-list">
+
+    <div class="step-item">
+      <div class="step-left"><div class="step-circle" style="background:var(--main)">1</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <div class="step-tag">Check</div>
+        <h3>今のくちびるの状態を確認する</h3>
+        <p>鏡の前で自分の口元を見る。リラックスしたとき、自然に口が開いていないか確認。多くの子が気づかずにポカンと開いています。</p>
+        <div class="note">「なにもしていないとき、くちびるはどこにある？」と自分に問いかけよう。</div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-left"><div class="step-circle" style="background:var(--sub)">2</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <div class="step-tag">Action</div>
+        <h3>上下のくちびるをそっとくっつける</h3>
+        <p><strong>力を入れずに</strong>、上くちびると下くちびるが軽く触れる状態にする。ギュッと噛んだり、強く押さえつけるのはNG。自然な閉じ方が正解。</p>
+        <div class="step-illust">
+          <svg viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg">
+            <rect width="380" height="130" fill="#fff0f5"/>
+            <!-- NG example left -->
+            <rect x="10" y="10" width="160" height="110" rx="14" fill="white" stroke="#ffd0d8" stroke-width="1.5"/>
+            <text x="90" y="28" text-anchor="middle" font-size="10" fill="#e05050" font-family="sans-serif" font-weight="bold">❌ 強く押さえすぎ</text>
+            <ellipse cx="90" cy="72" rx="56" ry="36" fill="#ffe8d8"/>
+            <!-- tight lips pressed -->
+            <path d="M44 70 Q90 64 136 70" stroke="#cc5070" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <!-- strain lines -->
+            <path d="M55 62 L52 55" stroke="#e05050" stroke-width="1.5"/>
+            <path d="M75 60 L74 53" stroke="#e05050" stroke-width="1.5"/>
+            <path d="M105 60 L106 53" stroke="#e05050" stroke-width="1.5"/>
+            <path d="M125 62 L128 55" stroke="#e05050" stroke-width="1.5"/>
+            <text x="90" y="112" text-anchor="middle" font-size="9" fill="#e05050" font-family="sans-serif">顎に力が入ってしまう</text>
+            <!-- arrow -->
+            <text x="193" y="72" font-size="24" fill="#ff7c9e">→</text>
+            <!-- OK example right -->
+            <rect x="210" y="10" width="160" height="110" rx="14" fill="white" stroke="#d0f0e8" stroke-width="1.5"/>
+            <text x="290" y="28" text-anchor="middle" font-size="10" fill="#2cb8a0" font-family="sans-serif" font-weight="bold">✅ そっとくっつける</text>
+            <ellipse cx="290" cy="72" rx="56" ry="36" fill="#ffe8d8"/>
+            <!-- soft lips closed -->
+            <path d="M250 68 Q290 74 330 68" stroke="#cc5070" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M256 66 Q290 70 324 66 Q314 73 290 75 Q266 73 256 66Z" fill="#d04070" opacity=".4"/>
+            <!-- relaxed indicators -->
+            <text x="232" y="60" font-size="12" fill="#2cb8a0" opacity=".7">〜</text>
+            <text x="330" y="60" font-size="12" fill="#2cb8a0" opacity=".7">〜</text>
+            <text x="290" y="112" text-anchor="middle" font-size="9" fill="#2cb8a0" font-family="sans-serif">リラックスした状態</text>
+          </svg>
+        </div>
+        <div class="note">「そっとくっつける」だけでOK。力を入れるほど効果が下がります。</div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-left"><div class="step-circle" style="background:var(--teal)">3</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <div class="step-tag">Hold</div>
+        <h3>そのまま10秒キープ＆鼻で呼吸</h3>
+        <p>くちびるを閉じたまま、<strong>鼻だけで息をする</strong>。口から息が漏れないように意識。最初は苦しく感じることもあるが、それは鼻呼吸が弱っているサイン。</p>
+        <div class="note">「お鼻で息をしながら、くちびるはお休み中」と伝えよう。</div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-left"><div class="step-circle" style="background:var(--gold)">4</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <div class="step-tag">Repeat</div>
+        <h3>10秒×10セットを目標に</h3>
+        <p>10秒キープしたら少し休憩。これを<strong>10セット</strong>繰り返す。慣れたら<strong>20秒・30秒</strong>と伸ばしていく。最終的には「気づいたら口が閉じている」状態が目標！</p>
+        <div class="note">テレビを見ながら、本を読みながらでもできます。習慣づけが大切！</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TIMER -->
+<div class="section sec-pad reveal">
+  <div class="eyebrow">Practice Tool</div>
+  <div class="sec-title">リップシール タイマー！</div>
+  <div class="timer-card">
+    <h3>👄 くちびる ぴったりタイマー</h3>
+    <p class="sub">スタートしたらくちびるをそっと閉じて、鼻で息しよう</p>
+    <div class="timer-display" id="timerDisplay">10</div>
+    <div class="timer-label" id="timerLabel">準備OK？ スタートを押してね</div>
+    <div class="timer-progress"><div class="timer-bar" id="timerBar" style="width:100%"></div></div>
+    <div class="set-dots" id="setDots"></div>
+    <div class="timer-btns">
+      <button class="tbtn tbtn-start" onclick="startTimer()">▶ スタート</button>
+      <button class="tbtn tbtn-reset" onclick="resetTimer()">↺ リセット</button>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="section sec-pad reveal">
+  <div class="eyebrow">Check Points</div>
+  <div class="sec-title">うまくできているかチェック！</div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🫁</div>
+      <h4>鼻で息できてる？</h4>
+      <p>口を閉じたまま鼻だけで楽に呼吸できているかチェック。苦しい場合は耳鼻科の受診も検討。</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">😤</div>
+      <h4>顎に力が入ってない？</h4>
+      <p>あごの先（オトガイ部）にシワが寄っていたら力が入りすぎ。リラックスしてやり直そう。</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">👅</div>
+      <h4>舌はどこにある？</h4>
+      <p>くちびるを閉じると同時に、舌先が上の前歯裏スポットにあるとベスト！</p>
+    </div>
+  </div>
+</div>
+
+<!-- VOICE -->
+<div class="section sec-pad reveal">
+  <div class="eyebrow">For Kids</div>
+  <div class="sec-title">子どもへの伝え方</div>
+  <div class="voice-bubble">
+    <p>「くちびるを<strong>そーっとくっつけて</strong>みて。力を入れなくていいよ。<br>
+    そのまま<strong>お鼻で息をして</strong>みよう。くちびるは<strong>お昼寝中</strong>のイメージ🌙<br>
+    10秒数えられたら合格！<strong>何回できるかな？</strong>🌸」</p>
+  </div>
+  <div class="voice-char">
+    <!-- Cute girl char small - lips closed proud -->
+    <svg class="char-illust" viewBox="0 0 80 108" xmlns="http://www.w3.org/2000/svg">
+      <rect x="18" y="62" width="44" height="40" rx="14" fill="#ffb8d0"/>
+      <path d="M18 78 Q40 90 62 78 L62 102 Q40 110 18 102Z" fill="#ff94bc" opacity=".5"/>
+      <ellipse cx="40" cy="44" rx="28" ry="30" fill="#ffe8d8"/>
+      <ellipse cx="40" cy="22" rx="28" ry="14" fill="#3d2314"/>
+      <ellipse cx="16" cy="40" rx="10" ry="20" fill="#3d2314"/>
+      <ellipse cx="64" cy="40" rx="10" ry="20" fill="#3d2314"/>
+      <path d="M14 50 Q4 64 7 76 Q14 78 15 66 Q15 56 18 50Z" fill="#3d2314"/>
+      <path d="M66 50 Q76 64 73 76 Q66 78 65 66 Q65 56 62 50Z" fill="#3d2314"/>
+      <text x="6" y="55" font-size="18">🎀</text>
+      <text x="54" y="55" font-size="18">🎀</text>
+      <path d="M96 100 Q116 78" stroke="none"/>
+      <!-- Eyes closed happy -->
+      <path d="M26 42 Q33 35 40 42" stroke="#3d2314" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      <path d="M40 42 Q47 35 54 42" stroke="#3d2314" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      <path d="M22 35 Q29 28 37 32" stroke="#3d2314" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M43 32 Q51 28 58 35" stroke="#3d2314" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="55" rx="5" ry="3" fill="#ffb899" opacity=".5"/>
+      <!-- Mouth CLOSED gentle smile -->
+      <path d="M30 64 Q40 70 50 64" stroke="#cc5070" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M33 65 Q40 69 47 65 Q44 68 40 69 Q36 68 33 65Z" fill="#cc5070" opacity=".35"/>
+      <ellipse cx="22" cy="52" rx="8" ry="5" fill="#ffb8c8" opacity=".45"/>
+      <ellipse cx="58" cy="52" rx="8" ry="5" fill="#ffb8c8" opacity=".45"/>
+      <path d="M18 72 Q6 84 8 96" stroke="#ffb8d0" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <path d="M62 72 Q74 84 72 96" stroke="#ffb8d0" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <circle cx="8" cy="98" r="7" fill="#ffe8d8"/>
+      <circle cx="72" cy="98" r="7" fill="#ffe8d8"/>
+    </svg>
+    <p style="font-size:12px;color:var(--gray);line-height:1.7;padding-top:8px">
+      「くちびるお昼寝」「お鼻さんのお仕事」など、擬人化した言葉が7〜8歳にはよく伝わります。日常のどこかで「くちびる閉じてる？」と声かけするだけでも意識が変わります。
+    </p>
+  </div>
+</div>
+
+<!-- CALENDAR -->
+<div class="section sec-pad reveal">
+  <div class="eyebrow">Track Progress</div>
+  <div class="sec-title">Week 1〜3 がんばりカレンダー</div>
+  <div class="cal-card">
+    <div class="cal-header"><h3>📅 達成記録</h3><span>タップしてチェック！</span></div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-legend"><span><div class="dot done"></div>達成</span><span><div class="dot empty"></div>これから</span></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-footer reveal">
+  <div class="nav-card">
+    <h3>🌸 くちびる、閉じられるようになってきた！</h3>
+    <p>次は<strong>鼻呼吸をしっかり定着</strong>させる<br><strong>Vol.2「鼻呼吸スイッチ訓練」</strong>へ進もう！</p>
+    <div class="nav-btns">
+      <a href="pokkan-index.html" class="nav-btn prev">← 一覧へ</a>
+      <a href="pokkan-vol2.html" class="nav-btn next">Vol.2 へ →</a>
+    </div>
+    <p style="margin-top:18px;font-size:11px;color:#aabccc">リンカクデンタルクリニック　南青山　|　お口とじとじシリーズ Vol.1</p>
+  </div>
+</div>
+
+<script>
+// TIMER
+let timerInt=null,curSet=0,running=false;
+const totalSets=10,holdSec=10;
+
+function buildDots(){
+  const c=document.getElementById('setDots');c.innerHTML='';
+  for(let i=0;i<totalSets;i++){
+    const d=document.createElement('div');
+    d.className='set-dot'+(i<curSet?' done':'');
+    d.id='dot'+i;d.textContent=i<curSet?'✓':(i+1);
+    c.appendChild(d);
+  }
+}
+buildDots();
+
+function startTimer(){
+  if(running)return;
+  if(curSet>=totalSets){resetTimer();}
+  running=true;runSet();
+}
+function runSet(){
+  if(curSet>=totalSets){
+    document.getElementById('timerLabel').textContent='🎉 10セット完了！すごい！';
+    document.getElementById('timerDisplay').textContent='✓';
+    running=false;return;
+  }
+  let rem=holdSec;
+  document.getElementById('timerLabel').textContent=`セット ${curSet+1}／${totalSets}　くちびるそっと閉じてね`;
+  document.getElementById('timerDisplay').textContent=rem;
+  document.getElementById('timerBar').style.width='100%';
+  timerInt=setInterval(()=>{
+    rem--;
+    document.getElementById('timerDisplay').textContent=rem;
+    document.getElementById('timerBar').style.width=(rem/holdSec*100)+'%';
+    if(rem<=0){
+      clearInterval(timerInt);timerInt=null;
+      const d=document.getElementById('dot'+curSet);
+      if(d){d.classList.add('done');d.textContent='✓';}
+      curSet++;
+      document.getElementById('timerLabel').textContent='😮‍💨 少し休憩…';
+      document.getElementById('timerDisplay').textContent='😊';
+      setTimeout(()=>{if(running)runSet();},1200);
+    }
+  },1000);
+}
+function resetTimer(){
+  clearInterval(timerInt);timerInt=null;running=false;curSet=0;
+  document.getElementById('timerDisplay').textContent=holdSec;
+  document.getElementById('timerLabel').textContent='準備OK？ スタートを押してね';
+  document.getElementById('timerBar').style.width='100%';
+  buildDots();
+}
+
+// CALENDAR
+const calGrid=document.getElementById('calGrid');
+const saved=JSON.parse(localStorage.getItem('pokkan1cal')||'{}');
+for(let i=1;i<=21;i++){
+  const d=document.createElement('div');
+  d.className='cal-day'+(saved[i]?' done':'');
+  d.textContent=saved[i]?'🌸':i;
+  d.onclick=()=>{saved[i]=!saved[i];d.classList.toggle('done',saved[i]);d.textContent=saved[i]?'🌸':i;try{localStorage.setItem('pokkan1cal',JSON.stringify(saved))}catch(e){}};
+  calGrid.appendChild(d);
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

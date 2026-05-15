@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お口とじとじ Vol.4 — マ・バ・パ行 口唇筋力ドリル</title>
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--navy:#1a3a5c;--gray:#7a96b0;--cream:#faf7f3;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'M PLUS Rounded 1c',sans-serif;background:var(--cream);color:var(--navy);overflow-x:hidden}
+.series-badge{display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap;justify-content:center}
+.series-label{background:var(--navy);color:white;font-size:10px;font-weight:800;letter-spacing:.15em;padding:4px 14px;border-radius:20px}
+.vol-num{color:white;font-size:11px;font-weight:900;padding:4px 14px;border-radius:20px}
+.series-name{font-size:10px;font-weight:800;padding:4px 12px;border-radius:20px}
+.hero-title{font-family:'Kaisei Decol',serif;font-size:clamp(26px,7vw,50px);font-weight:700;line-height:1.15;text-align:center;margin-bottom:6px}
+.hero-sub{font-size:13px;color:var(--gray);letter-spacing:.06em;margin-bottom:28px;text-align:center}
+.main-illust{width:min(330px,88vw);margin-bottom:28px;animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+.chip{background:white;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1.5px solid rgba(0,0,0,.08)}
+.scroll-hint{display:flex;flex-direction:column;align-items:center;gap:4px;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.scroll-hint span{font-size:10px;color:var(--gray)}
+.section{max-width:680px;margin:0 auto;padding:0 20px}
+.sec-pad{padding-top:52px}
+.eyebrow{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-family:'Kaisei Decol',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:20px}
+.why-card{background:white;border-radius:24px;padding:28px 24px;box-shadow:0 4px 24px rgba(0,0,0,.07);display:flex;gap:20px;align-items:flex-start}
+.why-icon{font-size:48px;line-height:1;flex-shrink:0}
+.why-card h2{font-size:16px;font-weight:800;margin-bottom:8px}
+.why-card p{font-size:13px;line-height:1.85;color:#5a7a98}
+.why-card strong{color:var(--navy)}
+.steps-list{display:flex;flex-direction:column;gap:0}
+.step-item{display:flex;gap:0}
+.step-left{display:flex;flex-direction:column;align-items:center;width:56px;flex-shrink:0}
+.step-circle{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:white;z-index:1;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.step-line{flex:1;width:2px;margin:4px 0;opacity:.3}
+.step-item:last-child .step-line{display:none}
+.step-body{flex:1;padding:0 0 30px 16px}
+.step-tag{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.step-body h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.step-body p{font-size:12.5px;line-height:1.8;color:#5a7a98;margin-bottom:12px}
+.illust-wrap{border-radius:16px;overflow:hidden;margin-bottom:12px}
+.note{background:#fef8e6;border-left:3px solid #f5a623;border-radius:0 10px 10px 0;padding:10px 14px;font-size:12px;color:#8a6820;font-weight:500}
+.note::before{content:'💡 '}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:480px){.tips-grid{grid-template-columns:1fr}}
+.tip-card{background:white;border-radius:16px;padding:18px 14px;text-align:center;box-shadow:0 3px 14px rgba(0,0,0,.06)}
+.tip-card .tip-icon{font-size:30px;margin-bottom:8px}
+.tip-card h4{font-size:12px;font-weight:800;color:var(--navy);margin-bottom:5px}
+.tip-card p{font-size:11px;line-height:1.65;color:var(--gray)}
+.voice-bubble{background:white;border-radius:20px 20px 20px 4px;padding:20px 22px;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-bottom:16px}
+.voice-bubble p{font-size:13px;line-height:1.8;color:#4a6880}
+.voice-char{display:flex;align-items:flex-end;gap:14px;padding-top:6px}
+.char-illust{width:80px;flex-shrink:0}
+.cal-card{background:white;border-radius:24px;padding:24px 20px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cal-header h3{font-size:15px;font-weight:800;color:var(--navy)}
+.cal-header span{font-size:11px;color:var(--gray)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:16px}
+.cal-day{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;border:1.5px solid #eef2f6;transition:all .2s;user-select:none}
+.cal-day.done{border-color:currentColor}
+.cal-legend{display:flex;gap:16px;font-size:11px;color:var(--gray)}
+.cal-legend span{display:flex;align-items:center;gap:5px}
+.dot{width:10px;height:10px;border-radius:3px}
+.dot.empty{background:#eef2f6;border:1px solid #dde5ee}
+.nav-footer{padding:48px 20px 56px;max-width:680px;margin:0 auto}
+.nav-card{border-radius:20px;padding:24px 20px;text-align:center}
+.nav-card h3{font-family:'Kaisei Decol',serif;font-size:16px;color:var(--navy);margin-bottom:6px}
+.nav-card p{font-size:12px;color:var(--gray);margin-bottom:18px;line-height:1.7}
+.nav-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.nav-btn{padding:10px 22px;border-radius:12px;font-family:'M PLUS Rounded 1c',sans-serif;font-size:12px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:transform .15s}
+.nav-btn:hover{transform:translateY(-2px)}
+.nav-btn.prev{background:white;color:var(--gray);border:1.5px solid #dde8f0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+.hero{min-height:100vh;background:linear-gradient(150deg,#ffeef4 0%,#f3eeff 50%,#fff8e0 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px 56px;position:relative;overflow:hidden}
+.blob1{position:absolute;top:-80px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,124,158,.18),transparent 70%);border-radius:50%;animation:drift 9s ease-in-out infinite}
+.blob2{position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(155,107,223,.14),transparent 70%);border-radius:50%;animation:drift 13s ease-in-out infinite reverse}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(10px,-14px)}}
+.eyebrow{color:#ff7c9e}
+.why-card{border-left:5px solid #ff7c9e}
+.why-card h2{color:#ff7c9e}
+.step-tag{color:#ff7c9e}
+.voice-bubble{border:2px solid #ffeef4}
+.voice-bubble strong{color:#ff7c9e}
+/* drill game */
+.drill-card{background:linear-gradient(135deg,#1a3a5c,#2a5a8a);border-radius:24px;padding:28px 24px;color:white;text-align:center;box-shadow:0 8px 32px rgba(26,58,92,.28)}
+.drill-display{font-family:'Kaisei Decol',serif;font-size:64px;font-weight:700;min-height:88px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.drill-char{display:inline-block;transition:transform .15s,opacity .2s}
+.drill-char.active{color:#ffb8d0;transform:scale(1.5)}
+.d-speed{font-size:11px;color:rgba(255,255,255,.6);margin-bottom:14px}
+.d-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.dbtn{padding:11px 22px;border-radius:13px;border:none;font-family:'M PLUS Rounded 1c',sans-serif;font-size:12px;font-weight:800;cursor:pointer;transition:transform .15s}
+.dbtn:active{transform:scale(.93)}
+.dbtn-s{background:#ff7c9e;color:white;box-shadow:0 4px 14px rgba(255,124,158,.4)}
+.dbtn-sp{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8)}
+.dbtn-r{background:rgba(255,80,80,.25);color:white}
+.d-score{margin-top:14px;font-size:12px;color:rgba(255,255,255,.6)}
+.nav-btn.next{background:#ff7c9e;color:white;box-shadow:0 4px 16px rgba(255,124,158,.35)}
+.nav-card{background:linear-gradient(135deg,#ffeef4,#f3eeff);border:1.5px dashed rgba(255,124,158,.4)}
+.cal-day.done{background:#ffeef4;border-color:#ff7c9e}
+
+
+html, body { overflow: auto !important; height: auto !important; }
+.scene {
+  position: relative !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+  display: flex !important;
+  min-height: 693px !important;
+  border-bottom: 3px solid rgba(0,0,0,.08) !important;
+}
+.scene * { opacity: 1 !important; animation: none !important; transform: none !important; }
+.progress, .tap-l, .tap-r, .scene-label, .tap-hint { display: none !important; }
+.reel { width: min(390px,100vw) !important; height: auto !important; position: relative !important; margin: 0 auto !important; }
+.s0-mesh,.s4-mesh,.s6-bg,.s6-mesh,.s0-bg,.s4-bg,.s0-dots,.s0-grain,.blob1,.blob2,.blob3 { position: absolute !important; }
+
+
+
+.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+.reveal.visible { opacity: 1 !important; }
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="blob1"></div><div class="blob2"></div>
+  <div class="series-badge">
+    <span class="series-label">お口とじとじシリーズ</span>
+    <span class="vol-num" style="background:#ff7c9e">Vol. 4</span>
+    <span class="series-name" style="background:#ffeef4;color:#ff7c9e">口腔機能発達支援</span>
+  </div>
+
+  <svg class="main-illust" viewBox="0 0 340 290" style="filter:drop-shadow(0 8px 28px rgba(255,124,158,.22))" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="170" cy="145" r="132" fill="#ffeef4" opacity=".5"/>
+    <rect x="124" y="220" width="92" height="58" rx="22" fill="#ffb8d0"/>
+    <path d="M140 220 Q170 234 200 220" stroke="#ff94bc" stroke-width="2.5" fill="none"/>
+    <ellipse cx="170" cy="236" rx="16" ry="10" fill="#ff7c9e"/>
+    <circle cx="170" cy="236" r="5" fill="#cc4070"/>
+    <path d="M124 230 Q98 210 90 186" stroke="#ffb8d0" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M216 230 Q242 210 250 186" stroke="#ffb8d0" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <circle cx="88" cy="182" r="11" fill="#ffe8d8"/>
+    <circle cx="252" cy="182" r="11" fill="#ffe8d8"/>
+    <ellipse cx="170" cy="146" rx="86" ry="90" fill="#ffe8d8"/>
+    <!-- Hair - side ponytail with curls -->
+    <ellipse cx="170" cy="78" rx="86" ry="44" fill="#4a1a6a"/>
+    <path d="M88 110 Q58 132 50 184 Q38 202 44 226 Q56 230 60 207 Q62 184 74 162 Q80 140 94 132Z" fill="#4a1a6a"/>
+    <path d="M252 110 Q280 132 286 182 Q278 188 266 164 Q262 142 250 132Z" fill="#4a1a6a"/>
+    <path d="M48 182 Q28 200 34 228 Q46 234 46 214 Q44 196 52 186Z" fill="#4a1a6a"/>
+    <!-- Ponytail tie -->
+    <circle cx="50" cy="186" r="11" fill="#9b6bdf"/>
+    <!-- Curl decorations -->
+    <path d="M50 198 Q36 210 42 228 Q48 230 46 218 Q42 208 50 200Z" fill="#4a1a6a"/>
+    <path d="M42 228 Q32 240 40 252 Q48 252 44 242 Q38 234 44 228Z" fill="#4a1a6a"/>
+    <path d="M96 104 Q116 82 142 94 Q152 78 170 76 Q188 78 198 94 Q224 82 244 104 Q224 100 204 108 Q189 98 170 96 Q151 98 136 108 Q116 100 96 104Z" fill="#4a1a6a"/>
+    <!-- Eyes - determined practising face -->
+    <ellipse cx="142" cy="144" rx="18" ry="20" fill="white"/>
+    <ellipse cx="198" cy="144" rx="18" ry="20" fill="white"/>
+    <ellipse cx="143" cy="146" rx="13" ry="14" fill="#6030a0"/>
+    <ellipse cx="199" cy="146" rx="13" ry="14" fill="#6030a0"/>
+    <circle cx="144" cy="147" r="8" fill="#1a0a30"/>
+    <circle cx="200" cy="147" r="8" fill="#1a0a30"/>
+    <circle cx="150" cy="139" r="5" fill="white"/>
+    <circle cx="206" cy="139" r="5" fill="white"/>
+    <path d="M125 135 Q134 126 142 130" stroke="#1a0a30" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M214 128 Q223 121 231 127" stroke="#1a0a30" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M126 126 Q142 118 158 124" stroke="#4a1a6a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M182 124 Q198 118 214 126" stroke="#4a1a6a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <ellipse cx="170" cy="165" rx="6" ry="4" fill="#ffb899" opacity=".6"/>
+    <!-- Lips practicing MA BA PA -->
+    <path d="M145 180 Q160 174 170 176 Q180 174 195 180 Q183 185 170 187 Q157 185 145 180Z" fill="#d04070"/>
+    <path d="M145 180 Q157 185 170 187 Q183 185 195 180 Q186 198 170 204 Q154 198 145 180Z" fill="#b83060"/>
+    <!-- MA BA PA floating cards -->
+    <rect x="24" y="38" width="62" height="62" rx="13" fill="#ff7c9e"/>
+    <text x="55" y="84" text-anchor="middle" font-family="serif" font-size="38" font-weight="bold" fill="white">ま</text>
+    <rect x="139" y="18" width="62" height="62" rx="13" fill="#9b6bdf"/>
+    <text x="170" y="64" text-anchor="middle" font-family="serif" font-size="38" font-weight="bold" fill="white">ば</text>
+    <rect x="254" y="38" width="62" height="62" rx="13" fill="#f5a623"/>
+    <text x="285" y="84" text-anchor="middle" font-family="serif" font-size="38" font-weight="bold" fill="white">ぱ</text>
+    <ellipse cx="108" cy="164" rx="22" ry="13" fill="#ffb8c8" opacity=".45"/>
+    <ellipse cx="232" cy="164" rx="22" ry="13" fill="#ffb8c8" opacity=".45"/>
+    <text x="20" y="30" font-size="14">✨</text>
+    <text x="296" y="28" font-size="13">💫</text>
+  </svg>
+
+  <h1 class="hero-title" style="color:#1a3a5c"><span style="color:#ff7c9e">マ・バ・パ行</span><br>口唇筋力ドリル</h1>
+  <p class="hero-sub">Lip Muscle Training — 口の周りの筋肉を鍛えよう！</p>
+  <div class="hero-chips">
+    <span class="chip" style="border-color:rgba(255,124,158,.3);color:#ff7c9e">⏱ 所要時間 1分</span>
+    <span class="chip" style="border-color:rgba(255,124,158,.3);color:#ff7c9e">🔁 各15回×2セット</span>
+    <span class="chip" style="border-color:rgba(255,124,158,.3);color:#ff7c9e">💪 口輪筋を鍛える</span>
+  </div>
+  <div class="scroll-hint"><span>スクロールして読む</span><div class="scroll-arrow" style="color:#ff7c9e">↓</div></div>
+</section>
+
+<div class="section sec-pad reveal">
+  <div class="why-card">
+    <div class="why-icon">💋</div>
+    <div>
+      <h2 style="color:#ff7c9e">口輪筋が弱いと口が閉じられない</h2>
+      <p>お口ポカンの根本原因のひとつが<strong>口輪筋（口の周りの筋肉）の低下</strong>です。口輪筋が弱いと、意識しないと口が閉じられません。<br><br>
+      マ・バ・パ行の発音には口唇が<strong>力強く・左右均等に閉じて開く</strong>動作が必要で、言語療法（SLP）では<strong>Bilabial Pressure Training（両唇圧訓練）</strong>として口輪筋強化に使われます。毎日のドリルで「自然に口が閉じる力」を取り戻します。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section sec-pad reveal">
+  <div class="eyebrow">How To</div>
+  <div class="sec-title">やり方 — 3つの行をマスター</div>
+  <div class="steps-list">
+    <div class="step-item">
+      <div class="step-left"><div class="step-circle" style="background:#ff7c9e">1</div><div class="step-line" style="background:#ff7c9e"></div></div>
+      <div class="step-body">
+        <div class="step-tag" style="color:#ff7c9e">MA Row</div>
+        <h3>「マママ」— 口輪筋の基本</h3>
+        <p>「マ」は上下の口唇が<strong>しっかり閉じてから開く</strong>音。ゆっくり「マ・マ・マ」と15回。唇の合わさり方が均等かチェック。</p>
+        <div class="note">「マ」は口輪筋全体を均等に使う。最も基本的な口唇閉鎖の練習。</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-left"><div class="step-circle" style="background:#9b6bdf">2</div><div class="step-line" style="background:#9b6bdf"></div></div>
+      <div class="step-body">
+        <div class="step-tag" style="color:#9b6bdf">BA Row</div>
+        <h3>「バババ」— 声を出して力強く</h3>
+        <p>「バ」は「マ」の有声版でより<strong>強い口唇閉鎖圧</strong>が必要。「バ・バ・バ」と力強く15回。声が大きいほど口唇筋肉が働いている。</p>
+        <div class="note">「バ」の発音時に頬が動いているか確認。頬も含めた表情筋トレーニングに。</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-left"><div class="step-circle" style="background:#f5a623">3</div><div class="step-line" style="background:#f5a623"></div></div>
+      <div class="step-body">
+        <div class="step-tag" style="color:#f5a623">PA Row</div>
+        <h3>「パパパ」— 破裂音で仕上げ</h3>
+        <p>「パ」は空気の<strong>破裂音</strong>。「パッ！パッ！パッ！」と鋭く15回。口の前に手を当てて空気が勢いよく出るか確認。</p>
+        <div class="note">「パ」の破裂が弱い場合は口唇閉鎖圧が不十分なサイン。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section sec-pad reveal">
+  <div class="eyebrow">Practice Game</div>
+  <div class="sec-title">口唇ドリルゲーム！</div>
+  <div class="drill-card">
+    <h3>💋 口唇リズムドリル</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:16px">光った文字を見て大きな声で発音しよう！</p>
+    <div class="drill-display" id="drillDisp"><span style="font-size:22px;color:rgba(255,255,255,.4)">スタートを押してね</span></div>
+    <div class="d-speed" id="dSpeed">スピード：ゆっくり</div>
+    <div class="d-btns">
+      <button class="dbtn dbtn-s" onclick="startDrill()">▶ スタート</button>
+      <button class="dbtn dbtn-sp" onclick="cycleSpeed()">🐇 速さ変更</button>
+      <button class="dbtn dbtn-r" onclick="stopDrill()">■ ストップ</button>
+    </div>
+    <div class="d-score" id="dScore"></div>
+  </div>
+</div>
+
+<div class="section sec-pad reveal">
+  <div class="eyebrow">Check Points</div>
+  <div class="sec-title">チェックポイント</div>
+  <div class="tips-grid">
+    <div class="tip-card"><div class="tip-icon">🪞</div><h4>鏡で口唇を確認</h4><p>左右均等に唇が動いているか鏡でチェック。片側だけ動く場合は要注意。</p></div>
+    <div class="tip-card"><div class="tip-icon">💨</div><h4>「パ」で空気チェック</h4><p>口の前に手を当てて「パ！」したとき、ちゃんと空気が勢いよく出るかな？</p></div>
+    <div class="tip-card"><div class="tip-icon">😤</div><h4>顎は動かさない</h4><p>口唇だけ動かすのが理想。顎が大きく動く場合は力が分散しています。</p></div>
+  </div>
+</div>
+
+<div class="section sec-pad reveal">
+  <div class="eyebrow">For Kids</div>
+  <div class="sec-title">子どもへの伝え方</div>
+  <div class="voice-bubble" style="border:2px solid #ffeef4">
+    <p>「<strong>まままま！</strong>って言ってみよう。くちびるちゃんとくっついてる？<br>
+    次は<strong>ばばばば！</strong>大きい声でね。<br>
+    最後に<strong>ぱぱぱぱ！</strong>って。手を口の前に置いて、<strong>風が出てきたら合格</strong>！💨」</p>
+  </div>
+  <div class="voice-char">
+    <svg class="char-illust" viewBox="0 0 80 108" xmlns="http://www.w3.org/2000/svg">
+      <rect x="18" y="62" width="44" height="40" rx="14" fill="#ffb8d0"/>
+      <path d="M18 78 Q40 90 62 78 L62 102 Q40 110 18 102Z" fill="#ffb8d0" opacity=".6"/>
+      <ellipse cx="40" cy="44" rx="28" ry="30" fill="#ffe8d8"/>
+      <ellipse cx="40" cy="22" rx="28" ry="14" fill="#3d2314"/>
+      <ellipse cx="16" cy="40" rx="10" ry="20" fill="#3d2314"/>
+      <ellipse cx="64" cy="40" rx="10" ry="20" fill="#3d2314"/>
+      <path d="M14 50 Q4 64 7 76 Q14 78 15 66 Q15 56 18 50Z" fill="#3d2314"/>
+      <path d="M66 50 Q76 64 73 76 Q66 78 65 66 Q65 56 62 50Z" fill="#3d2314"/>
+      <ellipse cx="8" cy="50" rx="8" ry="6" fill="#9b6bdf" transform="rotate(-20,8,50)"/>
+      <circle cx="8" cy="50" r="3" fill="#cc3060"/>
+      <ellipse cx="72" cy="50" rx="8" ry="6" fill="#9b6bdf" transform="rotate(20,72,50)"/>
+      <circle cx="72" cy="50" r="3" fill="#cc3060"/>
+      <path d="M96 100 Q116 78" stroke="none"/>
+      <ellipse cx="28" cy="38" rx="9" ry="10" fill="white"/>
+      <ellipse cx="52" cy="38" rx="9" ry="10" fill="white"/>
+      <circle cx="29" cy="39" r="6" fill="#6030a0"/>
+      <circle cx="53" cy="39" r="6" fill="#6030a0"/>
+      <circle cx="32" cy="35" r="2.5" fill="white"/>
+      <circle cx="56" cy="35" r="2.5" fill="white"/>
+      <path d="M22 32 Q29 26 36 30" stroke="#3d2314" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M44 30 Q51 26 58 32" stroke="#3d2314" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="52" rx="5" ry="3" fill="#ffb899" opacity=".5"/>
+      <path d="M28 58 Q40 65 52 58" stroke="#cc5070" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M31 60 Q40 65 49 60 Q46 64 40 65 Q34 64 31 60Z" fill="white"/>
+      <ellipse cx="20" cy="48" rx="8" ry="5" fill="#ffb8c8" opacity=".45"/>
+      <ellipse cx="60" cy="48" rx="8" ry="5" fill="#ffb8c8" opacity=".45"/>
+      <path d="M18 72 Q6 84 8 96" stroke="#ffb8d0" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <path d="M62 72 Q74 84 72 96" stroke="#ffb8d0" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <circle cx="8" cy="98" r="6" fill="#ffe8d8"/>
+      <circle cx="72" cy="98" r="6" fill="#ffe8d8"/>
+    </svg>
+    <p style="font-size:12px;color:var(--gray);line-height:1.7;padding-top:8px">手を口の前に当てて「パ！」の風を確認する方法は、子ども自身が達成感を味わいやすい。「風が出た！」という瞬間が大きなモチベーションになります。</p>
+  </div>
+</div>
+
+<div class="section sec-pad reveal">
+  <div class="eyebrow">Track Progress</div>
+  <div class="sec-title">Week 4〜6 がんばりカレンダー</div>
+  <div class="cal-card">
+    <div class="cal-header"><h3>📅 達成記録</h3><span>タップしてチェック！</span></div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-legend"><span><div class="dot" style="background:#ff7c9e"></div>達成</span><span><div class="dot empty"></div>これから</span></div>
+  </div>
+</div>
+
+<div class="nav-footer reveal">
+  <div class="nav-card">
+    <h3>💋 口唇の力がついてきた！</h3>
+    <p>次は<strong>ストローを使った</strong>本格トレーニング！<br><strong>Vol.5「ストロー吸引トレーニング」</strong>へ！</p>
+    <div class="nav-btns">
+      <a href="pokkan-vol3.html" class="nav-btn prev">← Vol.3へ</a>
+      <a href="pokkan-vol5.html" class="nav-btn next">Vol.5 へ →</a>
+    </div>
+    <p style="margin-top:18px;font-size:11px;color:#aabccc">リンカクデンタルクリニック　南青山　|　Vol.4</p>
+  </div>
+</div>
+
+<script>
+const drillSets=[['ま','ま','ま','ま','ま'],['ば','ば','ば','ば','ば'],['ぱ','ぱ','ぱ','ぱ','ぱ'],['ま','ば','ぱ','ま','ば']];
+const speeds=[700,450,280];const speedLabels=['ゆっくり','ふつう','はやい！'];
+let dInt=null,dSetIdx=0,dCharIdx=0,dSpeedIdx=0,dCount=0;
+function startDrill(){stopDrill();dSetIdx=0;dCharIdx=0;dCount=0;nextChar();}
+function nextChar(){
+  const set=drillSets[dSetIdx%drillSets.length];
+  const el=document.getElementById('drillDisp');el.innerHTML='';
+  set.forEach((c,i)=>{const s=document.createElement('span');s.className='drill-char'+(i===dCharIdx%set.length?' active':'');s.textContent=c;s.style.opacity=i===dCharIdx%set.length?'1':'0.25';s.style.fontSize=i===dCharIdx%set.length?'68px':'40px';el.appendChild(s);});
+  dCount++;document.getElementById('dScore').textContent=`発音回数：${dCount}回`;
+  dCharIdx++;if(dCharIdx>=set.length){dCharIdx=0;dSetIdx++;}
+  dInt=setTimeout(nextChar,speeds[dSpeedIdx]);
+}
+function stopDrill(){if(dInt){clearTimeout(dInt);dInt=null;}document.getElementById('drillDisp').innerHTML='<span style="font-size:22px;color:rgba(255,255,255,.4)">スタートを押してね</span>';}
+function cycleSpeed(){dSpeedIdx=(dSpeedIdx+1)%speeds.length;document.getElementById('dSpeed').textContent='スピード：'+speedLabels[dSpeedIdx];}
+const calGrid=document.getElementById('calGrid');
+const saved=JSON.parse(localStorage.getItem('pokkan4cal')||'{}');
+for(let i=1;i<=21;i++){const d=document.createElement('div');d.className='cal-day'+(saved[i]?' done':'');d.textContent=saved[i]?'💋':i;d.onclick=()=>{saved[i]=!saved[i];d.classList.toggle('done',saved[i]);d.textContent=saved[i]?'💋':i;try{localStorage.setItem('pokkan4cal',JSON.stringify(saved))}catch(e){}};calGrid.appendChild(d);}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
